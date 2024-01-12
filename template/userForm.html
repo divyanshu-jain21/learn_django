@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+
+<section>
+  <h2>User Form</h2>
+  <p>Resize the browser window to see the effect.</p>
+  <div class="row">
+    <div class="col-12">
+        {% comment %} # --------post method------------ {% endcomment %}
+            {% comment %} <form> {% endcomment %}
+        {% comment %} # --------post method------------ {% endcomment %}
+      <form method = "post">
+        {% csrf_token %}
+        {% comment %} ---------------------------------------------- {% endcomment %}
+        <div>
+          <label for = "">
+                value1
+          </label>
+          <input type="text" name = "num1" value="{{n1}}" class="form-control" />
+        </div>
+        <div>
+            <label for = "">
+                  value2
+            </label>
+            <input type="text" name = "num2" value="{{n2}}" class="form-control" />
+          </div>
+          <div>
+            <button type="submit" class="pt-4">
+                submit
+            </button>
+          </div>
+          output
+          <input type="text" value="{{output}}"/>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

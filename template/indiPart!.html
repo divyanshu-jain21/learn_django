@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <title>{{title}}</title>
+  <style>
+    .main {
+      width: 100%;
+      background-color: blue;
+      color: white;
+      padding: 25px;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <h1>My First HTML rendering</h1>
+      <h2>{{bdata}}</h2>
+      <p>by:- divyanshu.</p>
+    </div>
+    <hr />
+    <div>
+      <p>for list data</p>
+      {% for n in clist %}
+      <div>{{forloop.counter}}{{n}}</div>
+      {% endfor %}
+      <hr />
+      <p>for list data</p>
+      <table border="1" cellpadding="10px">
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+        </tr>
+        {% for d in student_details %}
+        <tr>
+          <th>{{d.name}}</th>
+          <th>{{d.phone}}</th>
+        </tr>
+        {% endfor %}
+      </table>
+      <p>
+        --------------------------------if--else--statement--------------------------------------
+      </p>
+      {% comment %} if -lse statement {% endcomment %} {% for n in numbers%}
+      {{n}} {%endfor%}
+      <p>
+        ------------------------loop--------------------------------------------------------
+      </p>
+      {% for n in numbers%}
+      <div>{{n}}</div>
+      {%endfor%}
+      <p>
+        ---------------------------if-----------------------------------------------------
+      </p>
+      {% for n in numbers%} {% if n > 30 %}
+      <div>{{n}}</div>
+      {%endif%} {%endfor%}
+      <p>
+        ---------------------------if-else----------------------------------------------------
+      </p>
+      {%if numbers|length > 0 %} {% for n in numbers %} {% if n > 30 %}
+      <div>{{n}}</div>
+      {%endif%} {%endfor%} {%else%}
+      <p>no data found</p>
+      {%endif%}
+    </div>
+  </body>
+</html>
